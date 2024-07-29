@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp</title>
+    <script src="https://annotations.learnosity.com/?v2024.2.LTS"></script>
+    <script src="https://items.learnosity.com/?v2024.2.LTS"></script>
+    <script src="/app.js" defer></script>
+</head>
+    <body>
+        <h1>ANNOTATIONS API</h1>
+        <button id="showDrawingArea">showDrawingArea</button>
+        <button id="showNotepad">showNotepad</button>
+        <button id="showStickyNote">showStickyNote</button>
+        <div id="annotations-container"></div>
+        <script>
+            var request = <%- JSON.stringify(request) %>; 
+            let annotationsAPI;
+            LearnosityAnnotations.init(request, document.querySelector('#annotations-container')).then((result) => annotationsAPI = result);
+        </script>
+    </body>
+</html>
